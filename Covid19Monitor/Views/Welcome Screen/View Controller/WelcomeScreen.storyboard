@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="x0g-6k-HA8">
+            <objects>
+                <viewController id="hnE-SQ-mbB" customClass="WelcomeViewController" customModule="Covid19Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kkf-uW-rBz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fOq-Ea-jxf">
+                                <rect key="frame" x="85" y="75" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="O6k-fv-ZIg"/>
+                                    <constraint firstAttribute="height" constant="150" id="ZFe-4u-2iJ"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESa-67-VdO">
+                                <rect key="frame" x="133.5" y="508" width="53" height="30"/>
+                                <state key="normal" title="Monitor"/>
+                                <connections>
+                                    <segue destination="pu2-cA-pBm" kind="show" id="FL5-rB-p5Q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ESa-67-VdO" firstAttribute="centerX" secondItem="kkf-uW-rBz" secondAttribute="centerX" id="6rl-Ec-RzZ"/>
+                            <constraint firstItem="9dW-Fr-871" firstAttribute="bottom" secondItem="ESa-67-VdO" secondAttribute="bottom" constant="30" id="D0Z-nj-G7W"/>
+                            <constraint firstItem="fOq-Ea-jxf" firstAttribute="top" secondItem="9dW-Fr-871" secondAttribute="top" constant="75" id="Ggj-CS-NVv"/>
+                            <constraint firstItem="fOq-Ea-jxf" firstAttribute="centerX" secondItem="kkf-uW-rBz" secondAttribute="centerX" id="kBg-dX-ArZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9dW-Fr-871"/>
+                    </view>
+                    <connections>
+                        <outlet property="animationImageView" destination="fOq-Ea-jxf" id="YDk-dh-ymX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9tL-dN-xOJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="26.25" y="161.61971830985917"/>
+        </scene>
+        <!--Covid19ListScreen-->
+        <scene sceneID="Si2-AS-RA3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Covid19ListScreen" id="pu2-cA-pBm" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="57j-fh-9zp"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jq9-Vm-Cct" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="732" y="162"/>
+        </scene>
+    </scenes>
+</document>
