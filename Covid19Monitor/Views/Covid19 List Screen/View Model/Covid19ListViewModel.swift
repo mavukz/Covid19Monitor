@@ -44,8 +44,10 @@ class Covid19ListViewModel {
     
     func fetchCovid19Cases() {
         interactor.fetchCovid19Cases(successBlock: { [weak self] response in
-            self?.cases = response
-            self?.createCovid19CaseItems(from: response)
+            let sortedResponseList = response.sorted(by: {
+                Int($0.newConfirmedCases)! > Int($1.newConfirmedCases)!
+            })
+            self?.createCovid19CaseItems(from: sortedResponseList)
             self?.delegate?.finishedFetchingCases()
         }) { [weak self] error in
             self?.delegate?.showError(with: error.localizedDescription)

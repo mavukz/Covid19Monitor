@@ -16,7 +16,7 @@ class Covid19SummaryTableViewCell: UITableViewCell {
     
     func populate(with item: Covid19SummaryItem) {
         countryNameLabel.text = "Country name: \(item.countryName)"
-        newConfirmedCasesLabel.text = "New confirmed cases \(item.newConfirmedCases)"
-        totalCasesLabel.text = "Total number of cases \(item.totalNumberOfConfirmedCases)"
+        newConfirmedCasesLabel.text = "New confirmed cases: \(item.newConfirmedCases)"
+        totalCasesLabel.text = "Total number of cases: \(item.totalNumberOfConfirmedCases)"
     }
 }
