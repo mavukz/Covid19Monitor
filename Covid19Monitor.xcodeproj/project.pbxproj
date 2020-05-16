@@ -23,6 +23,8 @@
 		7575D3E5246DF9C4004385ED /* Covid19SummaryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7575D3E4246DF9C4004385ED /* Covid19SummaryItem.swift */; };
 		757CA705247024BA003DC130 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 757CA704247024BA003DC130 /* Lottie */; };
 		757CA7092470277A003DC130 /* virusAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 757CA7082470277A003DC130 /* virusAnimation.json */; };
+		757CA70D247052FA003DC130 /* Covid19SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757CA70B247052FA003DC130 /* Covid19SummaryTableViewCell.swift */; };
+		757CA70E247052FA003DC130 /* Covid19SummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 757CA70C247052FA003DC130 /* Covid19SummaryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		7575D3DE246DEE45004385ED /* Covid19ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid19ListViewModel.swift; sourceTree = "<group>"; };
 		7575D3E4246DF9C4004385ED /* Covid19SummaryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid19SummaryItem.swift; sourceTree = "<group>"; };
 		757CA7082470277A003DC130 /* virusAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = virusAnimation.json; sourceTree = "<group>"; };
+		757CA70B247052FA003DC130 /* Covid19SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid19SummaryTableViewCell.swift; sourceTree = "<group>"; };
+		757CA70C247052FA003DC130 /* Covid19SummaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Covid19SummaryTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +160,6 @@
 			isa = PBXGroup;
 			children = (
 				7575D3C7246DDF6E004385ED /* View Controller */,
-				7575D3D4246DE390004385ED /* Interactor */,
 			);
 			path = "Welcome Screen";
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			children = (
 				7575D3CE246DE247004385ED /* View Controller */,
 				7575D3CD246DE1A1004385ED /* View Model */,
+				7575D3D4246DE390004385ED /* Interactor */,
 			);
 			path = "Covid19 List Screen";
 			sourceTree = "<group>";
@@ -190,6 +194,7 @@
 		7575D3CE246DE247004385ED /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				757CA70A24705289003DC130 /* Table View Cell */,
 				7575D3D0246DE2CB004385ED /* CovidListViewController.swift */,
 				7575D3D2246DE2E6004385ED /* Covid19ListScreen.storyboard */,
 				7575D3E4246DF9C4004385ED /* Covid19SummaryItem.swift */,
@@ -221,6 +226,15 @@
 				757CA7082470277A003DC130 /* virusAnimation.json */,
 			);
 			path = Lottie;
+			sourceTree = "<group>";
+		};
+		757CA70A24705289003DC130 /* Table View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				757CA70B247052FA003DC130 /* Covid19SummaryTableViewCell.swift */,
+				757CA70C247052FA003DC130 /* Covid19SummaryTableViewCell.xib */,
+			);
+			path = "Table View Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +351,7 @@
 				7575D39E246DDDDB004385ED /* Assets.xcassets in Resources */,
 				757CA7092470277A003DC130 /* virusAnimation.json in Resources */,
 				7575D3D3246DE2E6004385ED /* Covid19ListScreen.storyboard in Resources */,
+				757CA70E247052FA003DC130 /* Covid19SummaryTableViewCell.xib in Resources */,
 				7575D3CA246DDF9E004385ED /* WelcomeScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,6 +382,7 @@
 				7575D3CC246DDFB5004385ED /* WelcomeViewController.swift in Sources */,
 				7575D3D9246DE76B004385ED /* Covid19DataModel.swift in Sources */,
 				7575D3DB246DE7A5004385ED /* Covid19Interactor.swift in Sources */,
+				757CA70D247052FA003DC130 /* Covid19SummaryTableViewCell.swift in Sources */,
 				7575D3D7246DE43B004385ED /* Covid19Boundary.swift in Sources */,
 				7575D395246DDDD5004385ED /* AppDelegate.swift in Sources */,
 				7575D3E5246DF9C4004385ED /* Covid19SummaryItem.swift in Sources */,

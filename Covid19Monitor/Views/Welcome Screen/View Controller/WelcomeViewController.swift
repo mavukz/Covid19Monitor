@@ -10,10 +10,10 @@ import UIKit
 import Lottie
 
 class WelcomeViewController: UIViewController {
-   
+    
     @IBOutlet private var animationImageView: UIImageView!
     private var animationView = AnimationView()
-
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -27,6 +27,19 @@ class WelcomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: true)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(refreshAppFromBackground),
+                                               name: UIApplication.willEnterForegroundNotification,
+                                               object: UIApplication.shared)
+        animationView.play()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+        animationView.stop()
+    }
+    
+    @objc func refreshAppFromBackground() {
         animationView.play()
     }
 }

@@ -16,9 +16,10 @@ class Covid19ListViewController: UIViewController {
                                                       interactor: Covid19Interactor())
     
     override func viewDidLoad() {
-        //show loading indicator
         //pull data from service every 10 seconds
         viewModel.fetchCovid19Cases()
+        covidCasesTableView.register(UINib(nibName: "Covid19SummaryTableViewCell", bundle: .main),
+                                     forCellReuseIdentifier: "SummaryItemCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,11 +32,21 @@ class Covid19ListViewController: UIViewController {
 extension Covid19ListViewController: Covid19ListViewModelDelegate {
     
     func finishedFetchingCases() {
-        covidCasesTableView.reloadData()
+        DispatchQueue.main.async {
+            self.covidCasesTableView.reloadData()
+        }
     }
     
     func showError(with message: String) {
-        
+        let alertViewController = UIAlertController(title: "Error",
+                                                    message: message,
+                                                    preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK",
+                                        style: .default) { _ in
+                                            alertViewController.dismiss(animated: true)
+        }
+        alertViewController.addAction(alertAction)
+        present(alertViewController, animated: true)
     }
 }
 
@@ -48,7 +59,12 @@ extension Covid19ListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+        if let item = viewModel.summaryItem(at: indexPath.row) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SummaryItemCell") as? Covid19SummaryTableViewCell
+            cell?.populate(with: item)
+            return cell ?? UITableViewCell()
+        }
+        return UITableViewCell()
     }
 }
 
