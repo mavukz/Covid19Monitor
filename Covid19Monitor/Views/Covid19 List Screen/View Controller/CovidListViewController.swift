@@ -11,15 +11,16 @@ import UIKit
 class Covid19ListViewController: UIViewController {
     
     @IBOutlet private var covidCasesTableView: UITableView!
+    @IBOutlet private var loadingIndicatorView: UIActivityIndicatorView!
     
     private lazy var viewModel = Covid19ListViewModel(delegate: self,
                                                       interactor: Covid19Interactor())
     
     override func viewDidLoad() {
-        //pull data from service every 10 seconds
-        viewModel.fetchCovid19Cases()
         covidCasesTableView.register(UINib(nibName: "Covid19SummaryTableViewCell", bundle: .main),
                                      forCellReuseIdentifier: "SummaryItemCell")
+        loadingIndicatorView.startAnimating()
+        viewModel.fetchCovid19Cases()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,10 +35,14 @@ extension Covid19ListViewController: Covid19ListViewModelDelegate {
     func finishedFetchingCases() {
         DispatchQueue.main.async {
             self.covidCasesTableView.reloadData()
+            self.loadingIndicatorView.stopAnimating()
+            self.loadingIndicatorView.isHidden = true
         }
     }
     
     func showError(with message: String) {
+        loadingIndicatorView.stopAnimating()
+        loadingIndicatorView.isHidden = true
         let alertViewController = UIAlertController(title: "Error",
                                                     message: message,
                                                     preferredStyle: .alert)

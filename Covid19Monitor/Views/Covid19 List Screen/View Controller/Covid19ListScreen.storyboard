@@ -23,11 +23,20 @@
                                     <outlet property="delegate" destination="rzF-PO-oCO" id="5Ui-Ul-9wQ"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="CyJ-no-xNq">
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="m4o-cW-HJ7"/>
+                                    <constraint firstAttribute="width" constant="100" id="xPl-Nf-M1J"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="CyJ-no-xNq" firstAttribute="centerY" secondItem="EeB-6p-6ct" secondAttribute="centerY" id="J6F-n0-hsV"/>
                             <constraint firstItem="5r3-sA-oPE" firstAttribute="leading" secondItem="rec-gP-b0q" secondAttribute="leading" id="elR-Iv-izY"/>
                             <constraint firstItem="rec-gP-b0q" firstAttribute="trailing" secondItem="5r3-sA-oPE" secondAttribute="trailing" id="hCG-6W-U4o"/>
+                            <constraint firstItem="CyJ-no-xNq" firstAttribute="centerX" secondItem="EeB-6p-6ct" secondAttribute="centerX" id="pwz-di-Dce"/>
                             <constraint firstItem="5r3-sA-oPE" firstAttribute="top" secondItem="rec-gP-b0q" secondAttribute="top" id="tTc-PI-p0y"/>
                             <constraint firstItem="rec-gP-b0q" firstAttribute="bottom" secondItem="5r3-sA-oPE" secondAttribute="bottom" id="zrM-qP-s3M"/>
                         </constraints>
@@ -35,11 +44,12 @@
                     </view>
                     <connections>
                         <outlet property="covidCasesTableView" destination="5r3-sA-oPE" id="z8X-BK-Utq"/>
+                        <outlet property="loadingIndicatorView" destination="CyJ-no-xNq" id="gxK-AR-QXH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRV-xF-E2O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="78" y="167"/>
+            <point key="canvasLocation" x="76.811594202898561" y="166.74107142857142"/>
         </scene>
     </scenes>
 </document>
