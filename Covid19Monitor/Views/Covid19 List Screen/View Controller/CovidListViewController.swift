@@ -12,19 +12,30 @@ class Covid19ListViewController: UIViewController {
     
     @IBOutlet private var covidCasesTableView: UITableView!
     @IBOutlet private var loadingIndicatorView: UIActivityIndicatorView!
+    private var timer: Timer?
     
     private lazy var viewModel = Covid19ListViewModel(delegate: self,
                                                       interactor: Covid19Interactor())
     
+    #warning("@Luntu -> For better UX decided not to show loading indicator when refreshing the list, only show it when screen loads, however the api complains when making requests multiple times and returns a failure response, a technical error message will show up which is not cool when there was no indication to the user that we were trying to fetch information from the server after every 10 seconds")
     override func viewDidLoad() {
         covidCasesTableView.register(UINib(nibName: "Covid19SummaryTableViewCell", bundle: .main),
                                      forCellReuseIdentifier: "SummaryItemCell")
+        loadingIndicatorView.hidesWhenStopped = true
+        timer = Timer.scheduledTimer(withTimeInterval: 10,
+                                     repeats: true) { [weak self] timer in
+                                        self?.viewModel.fetchCovid19Cases()
+        }
         loadingIndicatorView.startAnimating()
-        viewModel.fetchCovid19Cases()
+        timer?.fire()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        timer?.invalidate()
     }
 }
 
@@ -36,23 +47,23 @@ extension Covid19ListViewController: Covid19ListViewModelDelegate {
         DispatchQueue.main.async {
             self.covidCasesTableView.reloadData()
             self.loadingIndicatorView.stopAnimating()
-            self.loadingIndicatorView.isHidden = true
         }
     }
     
     func showError(with message: String) {
-        loadingIndicatorView.stopAnimating()
-        loadingIndicatorView.isHidden = true
-        let alertViewController = UIAlertController(title: "Error",
-                                                    message: message,
-                                                    preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "OK",
-                                        style: .default) { _ in
-                                            alertViewController.dismiss(animated: true)
-                                            self.navigationController?.popViewController(animated: true)
+        DispatchQueue.main.async {
+            self.loadingIndicatorView.stopAnimating()
+            let alertViewController = UIAlertController(title: "Error",
+                                                        message: message,
+                                                        preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK",
+                                            style: .default) { _ in
+                                                alertViewController.dismiss(animated: true)
+                                                self.navigationController?.popViewController(animated: true)
+            }
+            alertViewController.addAction(alertAction)
+            self.present(alertViewController, animated: true)
         }
-        alertViewController.addAction(alertAction)
-        present(alertViewController, animated: true)
     }
 }
 
