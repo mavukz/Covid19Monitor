@@ -6,9 +6,13 @@
 //  Copyright © 2020 Luntu. All rights reserved.
 //
 
+import Foundation
+
 protocol Covid19ListViewModelDelegate {
     func finishedFetchingCases()
     func showError(with message: String)
+    func setImageView(at indexPath: IndexPath, with data: Data)
+    
 }
 
 class Covid19ListViewModel {
@@ -47,10 +51,25 @@ class Covid19ListViewModel {
             let sortedResponseList = response.sorted(by: {
                 Int($0.newConfirmedCases)! > Int($1.newConfirmedCases)!
             })
+            self?.cases = sortedResponseList
             self?.createCovid19CaseItems(from: sortedResponseList)
             self?.delegate?.finishedFetchingCases()
         }) { [weak self] error in
             self?.delegate?.showError(with: error.localizedDescription)
+        }
+    }
+    
+    func fetchCountryImage(at indexPath: IndexPath) {
+        if indexPath.row < summaryItems.count {
+            let item = summaryItems[indexPath.row]
+            if let currentCase = cases.first(where: { $0.countryName == item.countryName }) {
+                interactor.fetchCountryFlag(by: currentCase.countryCode,
+                                            successBlock: { [weak self] responseData in
+                                                self?.delegate?.setImageView(at: indexPath, with: responseData)
+                }) { _ in
+                }
+            }
+            
         }
     }
     

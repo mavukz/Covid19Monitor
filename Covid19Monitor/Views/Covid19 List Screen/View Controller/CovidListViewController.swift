@@ -65,6 +65,13 @@ extension Covid19ListViewController: Covid19ListViewModelDelegate {
             self.present(alertViewController, animated: true)
         }
     }
+    
+    func setImageView(at indexPath: IndexPath, with data: Data) {
+        DispatchQueue.main.async {
+            let cell = self.covidCasesTableView.cellForRow(at: indexPath) as? Covid19SummaryTableViewCell
+            cell?.setImageView(with: data)
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -79,6 +86,7 @@ extension Covid19ListViewController: UITableViewDataSource {
         if let item = viewModel.summaryItem(at: indexPath.row) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SummaryItemCell") as? Covid19SummaryTableViewCell
             cell?.populate(with: item)
+            viewModel.fetchCountryImage(at: indexPath)
             return cell ?? UITableViewCell()
         }
         return UITableViewCell()

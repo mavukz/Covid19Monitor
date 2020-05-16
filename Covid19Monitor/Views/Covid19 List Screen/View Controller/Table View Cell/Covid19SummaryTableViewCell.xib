@@ -41,27 +41,40 @@
                             <constraint firstAttribute="height" constant="1" id="V2Z-xM-7gd"/>
                         </constraints>
                     </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ak3-Yg-4NT">
+                        <rect key="frame" x="279" y="33.5" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="672-By-soO"/>
+                            <constraint firstAttribute="height" constant="50" id="Fhc-tO-uQe"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Wl9-P4-gvb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Eml-nU-ROX"/>
                     <constraint firstAttribute="bottom" secondItem="eUh-OJ-EQd" secondAttribute="bottom" id="IV9-Wy-EF0"/>
+                    <constraint firstItem="Ak3-Yg-4NT" firstAttribute="leading" relation="lessThanOrEqual" secondItem="cGP-gy-dmN" secondAttribute="trailing" constant="221" id="WeY-aQ-rjZ"/>
                     <constraint firstAttribute="trailing" secondItem="eUh-OJ-EQd" secondAttribute="trailing" id="a0e-zq-XTq"/>
                     <constraint firstItem="cGP-gy-dmN" firstAttribute="top" secondItem="s0O-SH-FRA" secondAttribute="bottom" constant="10" id="bTW-vn-drT"/>
                     <constraint firstItem="s0O-SH-FRA" firstAttribute="top" secondItem="Wl9-P4-gvb" secondAttribute="bottom" constant="10" id="hXN-yj-3iZ"/>
+                    <constraint firstItem="Ak3-Yg-4NT" firstAttribute="leading" relation="lessThanOrEqual" secondItem="s0O-SH-FRA" secondAttribute="trailing" constant="221" id="ioi-Xb-w4z"/>
                     <constraint firstAttribute="bottom" secondItem="cGP-gy-dmN" secondAttribute="bottom" constant="16" id="kFK-Qc-2TX"/>
                     <constraint firstItem="eUh-OJ-EQd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="qmc-ub-AZ2"/>
                     <constraint firstItem="cGP-gy-dmN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="rQa-6d-Aye"/>
+                    <constraint firstAttribute="trailing" secondItem="Ak3-Yg-4NT" secondAttribute="trailing" constant="16" id="wXs-cs-vNr"/>
+                    <constraint firstItem="Ak3-Yg-4NT" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xSi-hh-HHp"/>
                     <constraint firstItem="s0O-SH-FRA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="yEs-6o-vcL"/>
                     <constraint firstItem="Wl9-P4-gvb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="ypJ-9Z-OdO"/>
+                    <constraint firstItem="Ak3-Yg-4NT" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Wl9-P4-gvb" secondAttribute="trailing" constant="221" id="yxE-0J-4Zn"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="countryNameLabel" destination="Wl9-P4-gvb" id="Afp-Xq-pLF"/>
+                <outlet property="flagImageView" destination="Ak3-Yg-4NT" id="E0k-nl-YjA"/>
                 <outlet property="newConfirmedCasesLabel" destination="s0O-SH-FRA" id="1ye-BZ-rhb"/>
                 <outlet property="totalCasesLabel" destination="cGP-gy-dmN" id="ak9-SS-Xoq"/>
             </connections>
-            <point key="canvasLocation" x="152.89855072463769" y="130.91517857142856"/>
+            <point key="canvasLocation" x="152.89855072463769" y="130.24553571428572"/>
         </tableViewCell>
     </objects>
 </document>

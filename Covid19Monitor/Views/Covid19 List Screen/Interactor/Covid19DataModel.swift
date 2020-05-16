@@ -10,6 +10,7 @@ struct Covid19DataModel {
     var countryName: String
     var newConfirmedCases: String
     var totalNumberOfConfirmedCases: String
+    var countryCode: String
     
     init(dictionary: [String: Any]) {
         countryName = dictionary["Country"] as? String ?? ""
@@ -17,6 +18,7 @@ struct Covid19DataModel {
         newConfirmedCases = newCases == -1 ? "" : String(newCases)
         let confirmedCases = Covid19DataModel.getNumericValue(from: dictionary, with: "TotalConfirmed")
         totalNumberOfConfirmedCases = confirmedCases == -1 ? "" : String(confirmedCases)
+        countryCode = dictionary["CountryCode"] as? String ?? ""
     }
     
     private static func getNumericValue(from dictionay: [String: Any], with key: String) -> Int {

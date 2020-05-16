@@ -13,10 +13,15 @@ class Covid19SummaryTableViewCell: UITableViewCell {
     @IBOutlet private var countryNameLabel: UILabel!
     @IBOutlet private var newConfirmedCasesLabel: UILabel!
     @IBOutlet private var totalCasesLabel: UILabel!
+    @IBOutlet private var flagImageView: UIImageView!
     
     func populate(with item: Covid19SummaryItem) {
         countryNameLabel.text = "Country name: \(item.countryName)"
         newConfirmedCasesLabel.text = "New confirmed cases: \(item.newConfirmedCases)"
         totalCasesLabel.text = "Total number of cases: \(item.totalNumberOfConfirmedCases)"
+    }
+    
+    func setImageView(with data: Data) {
+        flagImageView.image = UIImage(data: data)
     }
 }
