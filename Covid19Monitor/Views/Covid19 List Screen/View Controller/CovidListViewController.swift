@@ -18,6 +18,11 @@ class Covid19ListViewController: UIViewController {
     override func viewDidLoad() {
         //show loading indicator
         //pull data from service every 10 seconds
+        viewModel.fetchCovid19Cases()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
 }
 

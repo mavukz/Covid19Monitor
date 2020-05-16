@@ -10,6 +10,6 @@ typealias FetchCasesFailed = (_ error: Error) -> Void
 
 protocol Covid19Boundary {
     
-    func fetchCovid19Cases(success successBlock: @escaping FetchCasesSuccess,
-                           failure error: @escaping FetchCasesFailed)
+    func fetchCovid19Cases(successBlock success: @escaping FetchCasesSuccess,
+                           failureBlock failure: @escaping FetchCasesFailed)
 }

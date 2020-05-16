@@ -7,21 +7,26 @@
 //
 
 import UIKit
+import Lottie
 
 class WelcomeViewController: UIViewController {
    
     @IBOutlet private var animationImageView: UIImageView!
+    private var animationView = AnimationView()
 
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        let interactor = Covid19Interactor()
-        interactor.fetchCovid19Cases(success: { _ in
-            
-        }) { (_) in
-            
-        }
+        let animation = Animation.named("virusAnimation")
+        animationView.animation = animation
+        animationView.frame = animationImageView.bounds
+        animationView.loopMode = .loop
+        animationView.animationSpeed = 1.5
+        animationImageView.addSubview(animationView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: true)
-    }    
+        animationView.play()
+    }
 }

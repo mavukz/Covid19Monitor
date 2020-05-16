@@ -43,7 +43,7 @@ class Covid19ListViewModel {
     }
     
     func fetchCovid19Cases() {
-        interactor.fetchCovid19Cases(success: { [weak self] response in
+        interactor.fetchCovid19Cases(successBlock: { [weak self] response in
             self?.cases = response
             self?.createCovid19CaseItems(from: response)
             self?.delegate?.finishedFetchingCases()

@@ -16,14 +16,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fOq-Ea-jxf">
-                                <rect key="frame" x="85" y="119" width="150" height="150"/>
+                                <rect key="frame" x="60" y="140" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="O6k-fv-ZIg"/>
-                                    <constraint firstAttribute="height" constant="150" id="ZFe-4u-2iJ"/>
+                                    <constraint firstAttribute="width" constant="200" id="O6k-fv-ZIg"/>
+                                    <constraint firstAttribute="height" constant="200" id="ZFe-4u-2iJ"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESa-67-VdO">
-                                <rect key="frame" x="133.5" y="420" width="53" height="30"/>
+                                <rect key="frame" x="133.5" y="400" width="53" height="30"/>
                                 <state key="normal" title="Monitor"/>
                                 <connections>
                                     <segue destination="pu2-cA-pBm" kind="show" id="FL5-rB-p5Q"/>
@@ -33,8 +33,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ESa-67-VdO" firstAttribute="centerX" secondItem="kkf-uW-rBz" secondAttribute="centerX" id="6rl-Ec-RzZ"/>
-                            <constraint firstItem="9dW-Fr-871" firstAttribute="bottom" secondItem="ESa-67-VdO" secondAttribute="bottom" constant="30" id="D0Z-nj-G7W"/>
-                            <constraint firstItem="fOq-Ea-jxf" firstAttribute="top" secondItem="9dW-Fr-871" secondAttribute="top" constant="75" id="Ggj-CS-NVv"/>
+                            <constraint firstItem="fOq-Ea-jxf" firstAttribute="top" secondItem="9dW-Fr-871" secondAttribute="top" constant="96" id="CVC-7c-sgc"/>
+                            <constraint firstItem="9dW-Fr-871" firstAttribute="bottom" secondItem="ESa-67-VdO" secondAttribute="bottom" constant="50" id="D0Z-nj-G7W"/>
                             <constraint firstItem="fOq-Ea-jxf" firstAttribute="centerX" secondItem="kkf-uW-rBz" secondAttribute="centerX" id="kBg-dX-ArZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9dW-Fr-871"/>
