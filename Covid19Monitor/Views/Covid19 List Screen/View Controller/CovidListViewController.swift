@@ -44,6 +44,7 @@ extension Covid19ListViewController: Covid19ListViewModelDelegate {
         let alertAction = UIAlertAction(title: "OK",
                                         style: .default) { _ in
                                             alertViewController.dismiss(animated: true)
+                                            self.navigationController?.popViewController(animated: true)
         }
         alertViewController.addAction(alertAction)
         present(alertViewController, animated: true)
