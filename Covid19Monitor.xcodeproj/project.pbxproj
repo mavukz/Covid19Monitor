@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7575D395246DDDD5004385ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7575D394246DDDD5004385ED /* AppDelegate.swift */; };
-		7575D397246DDDD5004385ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7575D396246DDDD5004385ED /* SceneDelegate.swift */; };
-		7575D399246DDDD5004385ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7575D398246DDDD5004385ED /* ViewController.swift */; };
-		7575D39C246DDDD5004385ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7575D39A246DDDD5004385ED /* Main.storyboard */; };
 		7575D39E246DDDDB004385ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7575D39D246DDDDB004385ED /* Assets.xcassets */; };
 		7575D3A1246DDDDB004385ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7575D39F246DDDDB004385ED /* LaunchScreen.storyboard */; };
 		7575D3AC246DDDDB004385ED /* Covid19MonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7575D3AB246DDDDB004385ED /* Covid19MonitorTests.swift */; };
@@ -46,9 +43,6 @@
 /* Begin PBXFileReference section */
 		7575D391246DDDD5004385ED /* Covid19Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Covid19Monitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7575D394246DDDD5004385ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7575D396246DDDD5004385ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7575D398246DDDD5004385ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7575D39B246DDDD5004385ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7575D39D246DDDDB004385ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7575D3A0246DDDDB004385ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7575D3A2246DDDDB004385ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,9 +113,6 @@
 			children = (
 				7575D3C4246DDE57004385ED /* Views */,
 				7575D394246DDDD5004385ED /* AppDelegate.swift */,
-				7575D396246DDDD5004385ED /* SceneDelegate.swift */,
-				7575D398246DDDD5004385ED /* ViewController.swift */,
-				7575D39A246DDDD5004385ED /* Main.storyboard */,
 				7575D39D246DDDDB004385ED /* Assets.xcassets */,
 				7575D39F246DDDDB004385ED /* LaunchScreen.storyboard */,
 				7575D3A2246DDDDB004385ED /* Info.plist */,
@@ -318,7 +309,6 @@
 				7575D3A1246DDDDB004385ED /* LaunchScreen.storyboard in Resources */,
 				7575D39E246DDDDB004385ED /* Assets.xcassets in Resources */,
 				7575D3D3246DE2E6004385ED /* Covid19ListScreen.storyboard in Resources */,
-				7575D39C246DDDD5004385ED /* Main.storyboard in Resources */,
 				7575D3CA246DDF9E004385ED /* WelcomeScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,7 +334,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7575D399246DDDD5004385ED /* ViewController.swift in Sources */,
 				7575D3DF246DEE45004385ED /* Covid19ListViewModel.swift in Sources */,
 				7575D3D1246DE2CB004385ED /* CovidListViewController.swift in Sources */,
 				7575D3CC246DDFB5004385ED /* WelcomeViewController.swift in Sources */,
@@ -352,7 +341,6 @@
 				7575D3DB246DE7A5004385ED /* Covid19Interactor.swift in Sources */,
 				7575D3D7246DE43B004385ED /* Covid19Boundary.swift in Sources */,
 				7575D395246DDDD5004385ED /* AppDelegate.swift in Sources */,
-				7575D397246DDDD5004385ED /* SceneDelegate.swift in Sources */,
 				7575D3E5246DF9C4004385ED /* Covid19SummaryItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,14 +377,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7575D39A246DDDD5004385ED /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7575D39B246DDDD5004385ED /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7575D39F246DDDDB004385ED /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
