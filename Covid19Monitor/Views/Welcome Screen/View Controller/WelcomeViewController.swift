@@ -15,6 +15,13 @@ class WelcomeViewController: UIViewController {
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
+        let interactor = Covid19Interactor()
+        interactor.fetchCovid19Cases(success: { _ in
+            
+        }) { (_) in
+            
+        }
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }    
 }

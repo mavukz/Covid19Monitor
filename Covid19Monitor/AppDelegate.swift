@@ -11,9 +11,12 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let welcomeScreen = UIStoryboard(name: "WelcomeScreen", bundle: .main)
+        let welcomeViewController = welcomeScreen.instantiateInitialViewController()!
+        window.rootViewController = UINavigationController(rootViewController: welcomeViewController)
+        window.makeKeyAndVisible()
         return true
     }
 

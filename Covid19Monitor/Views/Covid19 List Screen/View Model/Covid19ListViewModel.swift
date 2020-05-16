@@ -17,11 +17,29 @@ class Covid19ListViewModel {
     private let interactor: Covid19Boundary
     private var cases = [Covid19DataModel]()
     private var summaryItems = [Covid19SummaryItem]()
+    private var selectedCase: Covid19DataModel?
     
     init(delegate: Covid19ListViewModelDelegate,
          interactor: Covid19Boundary) {
         self.delegate = delegate
         self.interactor = interactor
+    }
+    
+    var numberOfRows: Int {
+        return summaryItems.count
+    }
+    
+    func summaryItem(at index: Int) -> Covid19SummaryItem? {
+        if index  < summaryItems.count {
+            return summaryItems[index]
+        }
+        return nil
+    }
+    
+    func setSelectedCase(at index: Int) {
+        if index < cases.count {
+            selectedCase = cases[index]
+        }
     }
     
     func fetchCovid19Cases() {
