@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		751316C724708D3000BBC870 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751316C624708D3000BBC870 /* PrimaryButton.swift */; };
 		7575D395246DDDD5004385ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7575D394246DDDD5004385ED /* AppDelegate.swift */; };
 		7575D39E246DDDDB004385ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7575D39D246DDDDB004385ED /* Assets.xcassets */; };
 		7575D3A1246DDDDB004385ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7575D39F246DDDDB004385ED /* LaunchScreen.storyboard */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		751316C624708D3000BBC870 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		7575D391246DDDD5004385ED /* Covid19Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Covid19Monitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7575D394246DDDD5004385ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7575D39D246DDDDB004385ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		751316C524708D1700BBC870 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				751316C624708D3000BBC870 /* PrimaryButton.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		7575D388246DDDD5004385ED = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +160,7 @@
 		7575D3C4246DDE57004385ED /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				751316C524708D1700BBC870 /* Shared */,
 				7575D3C5246DDE69004385ED /* Welcome Screen */,
 				7575D3C6246DDE80004385ED /* Covid19 List Screen */,
 			);
@@ -379,6 +390,7 @@
 			files = (
 				7575D3DF246DEE45004385ED /* Covid19ListViewModel.swift in Sources */,
 				7575D3D1246DE2CB004385ED /* CovidListViewController.swift in Sources */,
+				751316C724708D3000BBC870 /* PrimaryButton.swift in Sources */,
 				7575D3CC246DDFB5004385ED /* WelcomeViewController.swift in Sources */,
 				7575D3D9246DE76B004385ED /* Covid19DataModel.swift in Sources */,
 				7575D3DB246DE7A5004385ED /* Covid19Interactor.swift in Sources */,

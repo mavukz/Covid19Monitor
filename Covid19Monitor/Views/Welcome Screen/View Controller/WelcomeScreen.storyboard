@@ -22,8 +22,8 @@
                                     <constraint firstAttribute="height" constant="200" id="ZFe-4u-2iJ"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESa-67-VdO">
-                                <rect key="frame" x="133.5" y="400" width="53" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESa-67-VdO" customClass="PrimaryButton" customModule="Covid19Monitor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="450" width="320" height="30"/>
                                 <state key="normal" title="Monitor"/>
                                 <connections>
                                     <segue destination="pu2-cA-pBm" kind="show" id="FL5-rB-p5Q"/>
@@ -32,10 +32,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="ESa-67-VdO" firstAttribute="centerX" secondItem="kkf-uW-rBz" secondAttribute="centerX" id="6rl-Ec-RzZ"/>
+                            <constraint firstItem="ESa-67-VdO" firstAttribute="leading" secondItem="9dW-Fr-871" secondAttribute="leading" id="6tM-mS-iOh"/>
                             <constraint firstItem="fOq-Ea-jxf" firstAttribute="top" secondItem="9dW-Fr-871" secondAttribute="top" constant="96" id="CVC-7c-sgc"/>
-                            <constraint firstItem="9dW-Fr-871" firstAttribute="bottom" secondItem="ESa-67-VdO" secondAttribute="bottom" constant="50" id="D0Z-nj-G7W"/>
+                            <constraint firstItem="9dW-Fr-871" firstAttribute="trailing" secondItem="ESa-67-VdO" secondAttribute="trailing" id="Jpe-xM-4b7"/>
                             <constraint firstItem="fOq-Ea-jxf" firstAttribute="centerX" secondItem="kkf-uW-rBz" secondAttribute="centerX" id="kBg-dX-ArZ"/>
+                            <constraint firstItem="9dW-Fr-871" firstAttribute="bottom" secondItem="ESa-67-VdO" secondAttribute="bottom" id="kKN-P9-AcU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9dW-Fr-871"/>
                     </view>
