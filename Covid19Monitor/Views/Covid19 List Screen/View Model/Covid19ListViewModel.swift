@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Covid19ListViewModelDelegate {
+protocol Covid19ListViewModelDelegate: NSObjectProtocol {
     func finishedFetchingCases()
     func showError(with message: String)
     func setImageView(at indexPath: IndexPath, with data: Data)
@@ -17,7 +17,7 @@ protocol Covid19ListViewModelDelegate {
 
 class Covid19ListViewModel {
     
-    private var delegate: Covid19ListViewModelDelegate?
+    private weak var delegate: Covid19ListViewModelDelegate?
     private let interactor: Covid19Boundary
     private var cases = [Covid19DataModel]()
     private var summaryItems = [Covid19SummaryItem]()
