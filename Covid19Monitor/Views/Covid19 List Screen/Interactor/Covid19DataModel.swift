@@ -6,22 +6,45 @@
 //  Copyright © 2020 Luntu. All rights reserved.
 //
 
+import Foundation
+
 struct Covid19DataModel {
     var countryName: String
     var newConfirmedCases: String
     var totalNumberOfConfirmedCases: String
     var countryCode: String
     
-    init(dictionary: [String: Any]) {
-        countryName = dictionary["Country"] as? String ?? ""
-        let newCases = Covid19DataModel.getNumericValue(from: dictionary, with: "NewConfirmed")
-        newConfirmedCases = newCases == -1 ? "" : String(newCases)
-        let confirmedCases = Covid19DataModel.getNumericValue(from: dictionary, with: "TotalConfirmed")
-        totalNumberOfConfirmedCases = confirmedCases == -1 ? "" : String(confirmedCases)
-        countryCode = dictionary["CountryCode"] as? String ?? ""
+    enum CodingKeys: String, CodingKey {
+        case countryName = "Country"
+        case newConfirmedCases = "NewConfirmed"
+        case totalNumberOfConfirmedCases = "TotalConfirmed"
+        case countryCode = "CountryCode"
     }
-    
-    private static func getNumericValue(from dictionay: [String: Any], with key: String) -> Int {
-     return dictionay[key] as? Int ?? -1
+}
+
+// MARK: - Decoder
+
+extension Covid19DataModel: Decodable {
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        countryName = try container.decodeIfPresent(String.self, forKey: CodingKeys.countryName) ?? ""
+        newConfirmedCases = try String(container.decodeIfPresent(Int.self, forKey: CodingKeys.newConfirmedCases) ?? -1)
+        totalNumberOfConfirmedCases = try String(container.decodeIfPresent(Int.self, forKey: CodingKeys.totalNumberOfConfirmedCases) ?? -1)
+        countryCode = try container.decodeIfPresent(String.self, forKey: CodingKeys.countryCode) ?? ""
+    }
+}
+
+// MARK: - User-defined
+
+extension Covid19DataModel {
+    static func model(from dictionaryList: [Any]) -> [Covid19DataModel] {
+        do {
+            let decoder = JSONDecoder()
+            let data = try JSONSerialization.data(withJSONObject: dictionaryList, options: .prettyPrinted)
+            let response = try decoder.decode([Covid19DataModel].self, from: data)
+            return response
+        } catch {
+            return [Covid19DataModel]()
+        }
     }
 }
