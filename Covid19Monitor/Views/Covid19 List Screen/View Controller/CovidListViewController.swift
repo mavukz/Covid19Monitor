@@ -17,12 +17,11 @@ class Covid19ListViewController: UIViewController {
     private lazy var viewModel = Covid19ListViewModel(delegate: self,
                                                       interactor: Covid19Interactor())
     
-    #warning("@Luntu -> For better UX decided not to show loading indicator when refreshing the list, only show it when screen loads, however the api complains when making requests multiple times and returns a failure response, a technical error message will show up which is not cool when there was no indication to the user that we were trying to fetch information from the server after every 10 seconds")
     override func viewDidLoad() {
         covidCasesTableView.register(UINib(nibName: "Covid19SummaryTableViewCell", bundle: .main),
                                      forCellReuseIdentifier: "SummaryItemCell")
         loadingIndicatorView.hidesWhenStopped = true
-        timer = Timer.scheduledTimer(withTimeInterval: 10,
+        timer = Timer.scheduledTimer(withTimeInterval: 120,
                                      repeats: true) { [weak self] timer in
                                         self?.viewModel.fetchCovid19Cases()
         }
