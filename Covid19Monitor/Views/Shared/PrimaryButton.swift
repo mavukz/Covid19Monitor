@@ -35,10 +35,8 @@ class PrimaryButton: UIButton {
         }
     }
     
-    override var alignmentRectInsets: UIEdgeInsets {
-        get {
-            UIEdgeInsets(top: 0, left: -20, bottom: -30, right: -20)
-        }
+    override var alignmentRectInsets: UIEdgeInsets { 
+        UIEdgeInsets(top: 0, left: -20, bottom: -30, right: -20)
     }
 }
 
