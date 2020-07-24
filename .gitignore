@@ -2,3 +2,9 @@
 *.xcbkptlist
 
 *.xcuserstate
+
+Chart.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+
+Chart.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+
+Chart.xcodeproj/xcuserdata/luntu.xcuserdatad/xcschemes/xcschememanagement.plist

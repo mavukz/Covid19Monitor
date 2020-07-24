@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7rC-qF-ByN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7rC-qF-ByN">
     <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -49,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="2021.25" y="161.25"/>
         </scene>
-        <!--Covid19ListScreen-->
+        <!--LineChartScreen-->
         <scene sceneID="Si2-AS-RA3">
             <objects>
-                <viewControllerPlaceholder storyboardName="Covid19ListScreen" id="pu2-cA-pBm" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="LineChartScreen" id="pu2-cA-pBm" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="57j-fh-9zp"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jq9-Vm-Cct" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -65,7 +65,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7rC-qF-ByN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lxi-xc-JA2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
