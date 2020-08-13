@@ -30,6 +30,8 @@
 		757CA70E247052FA003DC130 /* Covid19SummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 757CA70C247052FA003DC130 /* Covid19SummaryTableViewCell.xib */; };
 		7584B96224CB95F400D933DC /* Chart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7584B96124CB95EC00D933DC /* Chart.framework */; };
 		7584B96324CB95F400D933DC /* Chart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7584B96124CB95EC00D933DC /* Chart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7584B96524CB96DF00D933DC /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7584B96424CB96DF00D933DC /* LineChartView.swift */; };
+		7584B96824CB970500D933DC /* LineChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7584B96724CB970500D933DC /* LineChartView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		757CA70B247052FA003DC130 /* Covid19SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid19SummaryTableViewCell.swift; sourceTree = "<group>"; };
 		757CA70C247052FA003DC130 /* Covid19SummaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Covid19SummaryTableViewCell.xib; sourceTree = "<group>"; };
 		7584B95C24CB95EC00D933DC /* Chart.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Chart.xcodeproj; sourceTree = "<group>"; };
+		7584B96424CB96DF00D933DC /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
+		7584B96724CB970500D933DC /* LineChartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LineChartView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 		751316C524708D1700BBC870 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				7584B96624CB96E500D933DC /* Chart View */,
 				751316C624708D3000BBC870 /* PrimaryButton.swift */,
 			);
 			path = Shared;
@@ -305,6 +310,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7584B96624CB96E500D933DC /* Chart View */ = {
+			isa = PBXGroup;
+			children = (
+				7584B96424CB96DF00D933DC /* LineChartView.swift */,
+				7584B96724CB970500D933DC /* LineChartView.xib */,
+			);
+			path = "Chart View";
+			sourceTree = "<group>";
+		};
 		758DEC0124CB64F400330A3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -446,6 +460,7 @@
 				7575D3D3246DE2E6004385ED /* Covid19ListScreen.storyboard in Resources */,
 				757CA70E247052FA003DC130 /* Covid19SummaryTableViewCell.xib in Resources */,
 				7575D3CA246DDF9E004385ED /* WelcomeScreen.storyboard in Resources */,
+				7584B96824CB970500D933DC /* LineChartView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +496,7 @@
 				7575D395246DDDD5004385ED /* AppDelegate.swift in Sources */,
 				7506127A24CB869F00A6DDCA /* LineChartViewController.swift in Sources */,
 				7575D3E5246DF9C4004385ED /* Covid19SummaryItem.swift in Sources */,
+				7584B96524CB96DF00D933DC /* LineChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
