@@ -19,9 +19,10 @@ class Covid19ListViewModel {
     
     private weak var delegate: Covid19ListViewModelDelegate?
     private let interactor: Covid19Boundary
-    private var cases = [Covid19DataModel]()
+    private var cases = [Covid19ResponseModel]()
     private var summaryItems = [Covid19SummaryItem]()
-    private var selectedCase: Covid19DataModel?
+    private var selectedCase: Covid19ResponseModel?
+    private let persistanceManager = Covid19PersistanceManager()
     
     init(delegate: Covid19ListViewModelDelegate,
          interactor: Covid19Boundary) {
@@ -54,6 +55,14 @@ class Covid19ListViewModel {
             self?.cases = sortedResponseList
             self?.createCovid19CaseItems(from: sortedResponseList)
             self?.delegate?.finishedFetchingCases()
+            if let dataModelList = self?.createDataModelList(from: sortedResponseList) {
+                self?.persistanceManager.persistData(for: dataModelList) {
+                    self?.persistanceManager.retrievePersistedData(completion: { localData in
+                        debugPrint(localData?.count ?? "")
+                    })
+                }
+            }
+
         }) { [weak self] error in
             self?.delegate?.showError(with: error.localizedDescription)
         }
@@ -75,12 +84,27 @@ class Covid19ListViewModel {
     
     // MARK: - Private
     
-    private func createCovid19CaseItems(from cases: [Covid19DataModel]) {
+    private func createCovid19CaseItems(from cases: [Covid19ResponseModel]) {
         let items = cases.map {
             Covid19SummaryItem(countryName: $0.countryName,
                                newConfirmedCases: $0.newConfirmedCases,
                                totalNumberOfConfirmedCases: $0.totalNumberOfConfirmedCases)
         }
         summaryItems = items
+    }
+}
+
+#warning("Temporary to test core data")
+
+extension Covid19ListViewModel {
+
+    func createDataModelList(from responseModelList: [Covid19ResponseModel]) -> [Covid19MonitorDataModel] {
+        var dataModelList: [Covid19MonitorDataModel] = []
+        for responseModel in responseModelList {
+            let dataModel = Covid19MonitorDataModel()
+            dataModel.map(from: responseModel)
+            dataModelList.append(dataModel)
+        }
+        return dataModelList
     }
 }
