@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias FetchCasesSuccess = (_ response: [Covid19DataModel]) -> Void
+typealias FetchCasesSuccess = (_ response: [Covid19ResponseModel]) -> Void
 typealias FetchCountryFlagsSuccess = (_ response: Data) -> Void
 typealias BoundaryFailureBlock = (_ error: Error) -> Void
 

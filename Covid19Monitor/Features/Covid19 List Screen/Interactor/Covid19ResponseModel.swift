@@ -1,5 +1,5 @@
 //
-//  Covid19DataModel.swift
+//  Covid19ResponseModel.swift
 //  Covid19Monitor
 //
 //  Created by Luntu on 2020/05/14.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Covid19DataModel {
+struct Covid19ResponseModel {
     var countryName: String
     var newConfirmedCases: String
     var totalNumberOfConfirmedCases: String
@@ -24,7 +24,7 @@ struct Covid19DataModel {
 
 // MARK: - Decoder
 
-extension Covid19DataModel: Decodable {
+extension Covid19ResponseModel: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         countryName = try container.decodeIfPresent(String.self, forKey: CodingKeys.countryName) ?? ""
@@ -36,15 +36,15 @@ extension Covid19DataModel: Decodable {
 
 // MARK: - User-defined
 
-extension Covid19DataModel {
-    static func model(from dictionaryList: [Any]) -> [Covid19DataModel] {
+extension Covid19ResponseModel {
+    static func model(from dictionaryList: [Any]) -> [Covid19ResponseModel] {
         do {
             let decoder = JSONDecoder()
             let data = try JSONSerialization.data(withJSONObject: dictionaryList, options: .prettyPrinted)
-            let response = try decoder.decode([Covid19DataModel].self, from: data)
+            let response = try decoder.decode([Covid19ResponseModel].self, from: data)
             return response
         } catch {
-            return [Covid19DataModel]()
+            return [Covid19ResponseModel]()
         }
     }
 }
