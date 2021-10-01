@@ -24,7 +24,8 @@ class Covid19Interactor: Covid19Boundary {
                         do {
                             let json = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any]
                             if let payData = json {
-                                let dataModelList = Covid19DataModel.model(from: payData["Countries"] as! [Any])
+                                debugPrint(payData)
+                                let dataModelList = Covid19ResponseModel.model(from: payData["Countries"] as! [Any])
                                 success(dataModelList)
                             }
                         } catch {
