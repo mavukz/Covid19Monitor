@@ -51,12 +51,12 @@ class Covid19PersistanceManager {
         }
     }
 
-    // MARK: - Private
-    private func managedObjectContext() -> NSManagedObjectContext? {
+    func managedObjectContext() -> NSManagedObjectContext? {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil }
         return appDelegate.persistentContainer.viewContext
     }
 
+    // MARK: - Private
     private func saveParentContext(_ parentManagedObjectContext: NSManagedObjectContext) {
         do {
             try parentManagedObjectContext.save()

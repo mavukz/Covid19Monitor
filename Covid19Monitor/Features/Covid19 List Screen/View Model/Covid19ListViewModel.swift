@@ -55,7 +55,8 @@ class Covid19ListViewModel {
             self?.cases = sortedResponseList
             self?.createCovid19CaseItems(from: sortedResponseList)
             self?.delegate?.finishedFetchingCases()
-            if let dataModelList = self?.createDataModelList(from: sortedResponseList) {
+            guard let managedObjectContext = self?.persistanceManager.managedObjectContext() else { return }
+            if let dataModelList = self?.createDataModelList(from: sortedResponseList, in: managedObjectContext) {
                 self?.persistanceManager.persistData(for: dataModelList) {
                     self?.persistanceManager.retrievePersistedData(completion: { localData in
                         debugPrint(localData?.count ?? "")
@@ -75,7 +76,7 @@ class Covid19ListViewModel {
                 interactor.fetchCountryFlag(by: currentCase.countryCode,
                                             successBlock: { [weak self] responseData in
                                                 self?.delegate?.setImageView(at: indexPath, with: responseData)
-                }) { _ in
+                                            }) { _ in
                 }
             }
             
@@ -95,15 +96,19 @@ class Covid19ListViewModel {
 }
 
 #warning("Temporary to test core data")
+import CoreData
 
 extension Covid19ListViewModel {
 
-    func createDataModelList(from responseModelList: [Covid19ResponseModel]) -> [Covid19MonitorDataModel] {
+    func createDataModelList(from responseModelList: [Covid19ResponseModel],
+                             in managedObjectContext: NSManagedObjectContext) -> [Covid19MonitorDataModel] {
         var dataModelList: [Covid19MonitorDataModel] = []
         for responseModel in responseModelList {
-            let dataModel = Covid19MonitorDataModel()
-            dataModel.map(from: responseModel)
-            dataModelList.append(dataModel)
+            if let dataModel = NSEntityDescription.insertNewObject(forEntityName: "Covid19MonitorDataModel",
+                                                                   into: managedObjectContext) as? Covid19MonitorDataModel {
+                dataModel.map(from: responseModel)
+                dataModelList.append(dataModel)
+            }
         }
         return dataModelList
     }
